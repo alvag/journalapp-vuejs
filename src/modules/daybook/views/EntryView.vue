@@ -1,9 +1,9 @@
 <template>
     <div class="entry-title d-flex justify-content-between p-2">
         <div>
-            <span class="text-success fs-3 fw-bold">15</span>
-            <span class="fs-3 mx-1">Julio</span>
-            <span class="fs-4 mx-2 fw-light">2021, jueves</span>
+            <span class="text-success fs-3 fw-bold">{{ date.day }}</span>
+            <span class="fs-3 mx-1">{{ date.month }}</span>
+            <span class="fs-4 mx-2 fw-light">{{ date.yearDay }}</span>
         </div>
 
         <div>
@@ -22,7 +22,9 @@
     <hr>
 
     <div class="d-flex flex-column px-3 h-75">
-        <textarea class="form-control shadow-none" placeholder="¿Qué sucedió hoy?"></textarea>
+        <textarea v-model="entry.text"
+                  class="form-control shadow-none"
+                  placeholder="¿Qué sucedió hoy?"></textarea>
     </div>
 
     <img alt="entry picture"
@@ -34,11 +36,44 @@
 
 <script>
 import { defineAsyncComponent } from 'vue';
+import { mapGetters } from 'vuex';
+import getDayMonthYear from '@/modules/daybook/helpers/getDayMonthYear';
 
 export default {
     name: 'EntryView',
+    props: {
+        id: {
+            type: String,
+            required: true
+        }
+    },
+    daa() {
+        return {
+            entry: null
+        };
+    },
+    created() {
+        this.loadEntry();
+    },
+    computed: {
+        ...mapGetters( 'journal', ['getEntryById'] ),
+        date() {
+            return getDayMonthYear( this.entry.date );
+        }
+    },
     components: {
         Fab: defineAsyncComponent( () => import('../components/Fab') )
+    },
+    methods: {
+        loadEntry() {
+            const entry = this.getEntryById( this.id );
+            console.log( entry );
+            if ( !entry ) {
+                this.$router.push( { name: 'no-entry' } );
+            } else {
+                this.entry = entry;
+            }
+        }
     }
 };
 </script>

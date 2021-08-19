@@ -1,22 +1,39 @@
 <template>
     <div
         class="entry-container mb-3 p-2 pointer"
-        @click="$router.push({name: 'entry', params: {id: 10}})">
+        @click="$router.push({name: 'entry', params: {id: entry.id}})">
         <div class="entry-title d-flex">
-            <span class="text-success fs-5 fw-bold">15</span>
-            <span class="mx-1 fs-5">Julio</span>
-            <span class="mx-2 fw-light">2021, jueves</span>
+            <span class="text-success fs-5 fw-bold">{{ date.day }}</span>
+            <span class="mx-1 fs-5">{{ date.month }}</span>
+            <span class="mx-2 fw-light">{{ date.yearDay }}</span>
         </div>
 
         <div class="entry-description">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate deleniti earum eos exercitationem, fuga hic id illo, minus neque non ratione temporibus vel vero! Autem deserunt dolores nam sint. In!
+            {{ shortText }}
         </div>
     </div>
 </template>
 
 <script>
+
+import getDayMonthYear from '@/modules/daybook/helpers/getDayMonthYear';
+
 export default {
-    name: 'Entry'
+    name: 'Entry',
+    props: {
+        entry: {
+            type: Object,
+            required: true
+        }
+    },
+    computed: {
+        shortText() {
+            return this.entry.text.length > 130 ? this.entry.text.substring( 0, 130 ) + '...' : this.entry.text;
+        },
+        date() {
+            return getDayMonthYear( this.entry.date );
+        }
+    }
 };
 </script>
 
