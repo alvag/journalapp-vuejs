@@ -29,7 +29,7 @@
          class="img-thumbnail"
          src="https://fotoarte.com.uy/wp-content/uploads/2019/03/Landscape-fotoarte.jpg">
 
-    <Fab/>
+    <Fab icon="fa-save"/>
 </template>
 
 <script>
