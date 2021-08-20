@@ -6,7 +6,7 @@ export const getEntriesByTerm = ( state ) => ( term = '' ) => {
 };
 
 export const getEntryById = ( state ) => ( id ) => {
-	const entry = state.entries.find( entry => entry.id === Number( id ) );
+	const entry = state.entries.find( entry => entry.id === id );
 	if ( !entry ) {
 		return;
 	}

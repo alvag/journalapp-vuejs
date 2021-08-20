@@ -6,6 +6,13 @@
                    placeholder="Buscar entrada" type="text">
         </div>
 
+        <div class="my-2 d-flex flex-column">
+            <button class="btn btn-primary mx-3" @click="createNewEntry">
+                <i class="fa fa-plus-circle"></i>
+                Nueva Entrada
+            </button>
+        </div>
+
         <div class="entry-scrollarea">
             <div v-for="entry in entriesByTerm" :key="entry.id">
                 <Entry :entry="entry"/>
@@ -34,6 +41,11 @@ export default {
         return {
             term: ''
         };
+    },
+    methods: {
+        createNewEntry() {
+            this.$router.push( { name: 'entry', params: { id: 'new-entry' } } );
+        }
     }
 };
 </script>
@@ -46,8 +58,8 @@ export default {
 }
 
 .entry-scrollarea {
-    height     : calc(100vh - 105px);
-    overflow-y : scroll;
+    height     : calc(100vh - 160px);
+    overflow-y : auto;
 }
 
 </style>
