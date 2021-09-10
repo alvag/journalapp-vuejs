@@ -1,0 +1,517 @@
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+@import url("./fonts/Linearicons-Free-v1.0.0/icon-font.min.css");
+
+@font-face {
+  font-family : "Ubuntu-Regular", sans-serif;
+  src         : url("./fonts/ubuntu/Ubuntu-Regular.ttf");
+}
+
+@font-face {
+  font-family : Ubuntu-Bold;
+  src         : url("./fonts/ubuntu/Ubuntu-Bold.ttf");
+}
+
+
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
+
+* {
+  box-sizing : border-box;
+  margin     : 0;
+  padding    : 0;
+}
+
+body, html {
+  font-family : Ubuntu-Regular, sans-serif;
+  height      : 100%;
+}
+
+/*---------------------------------------------*/
+a {
+  color              : #666666;
+  font-family        : "Ubuntu-Regular", sans-serif;
+  font-size          : 14px;
+  line-height        : 1.7;
+  margin             : 0;
+  -moz-transition    : all 0.4s;
+  -o-transition      : all 0.4s;
+  -webkit-transition : all 0.4s;
+  transition         : all 0.4s;
+}
+
+a:focus {
+  outline : none !important;
+}
+
+a:hover {
+  color           : #FFFFFF;
+  text-decoration : none;
+}
+
+/*---------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+  margin : 0;
+}
+
+p {
+  color       : #666666;
+  font-family : "Ubuntu-Regular", sans-serif;
+  font-size   : 14px;
+  line-height : 1.7;
+  margin      : 0;
+}
+
+ul, li {
+  list-style-type : none;
+  margin          : 0;
+}
+
+
+/*---------------------------------------------*/
+input {
+  border  : none;
+  outline : none;
+}
+
+textarea {
+  border  : none;
+  outline : none;
+}
+
+textarea:focus, input:focus {
+  border-color : transparent !important;
+}
+
+input:focus::-webkit-input-placeholder {
+  color : transparent;
+}
+
+input:focus:-moz-placeholder {
+  color : transparent;
+}
+
+input:focus::-moz-placeholder {
+  color : transparent;
+}
+
+input:focus:-ms-input-placeholder {
+  color : transparent;
+}
+
+textarea:focus::-webkit-input-placeholder {
+  color : transparent;
+}
+
+textarea:focus:-moz-placeholder {
+  color : transparent;
+}
+
+textarea:focus::-moz-placeholder {
+  color : transparent;
+}
+
+textarea:focus:-ms-input-placeholder {
+  color : transparent;
+}
+
+input::-webkit-input-placeholder {
+  color : #555555;
+}
+
+input:-moz-placeholder {
+  color : #555555;
+}
+
+input::-moz-placeholder {
+  color : #555555;
+}
+
+input:-ms-input-placeholder {
+  color : #555555;
+}
+
+textarea::-webkit-input-placeholder {
+  color : #555555;
+}
+
+textarea:-moz-placeholder {
+  color : #555555;
+}
+
+textarea::-moz-placeholder {
+  color : #555555;
+}
+
+textarea:-ms-input-placeholder {
+  color : #555555;
+}
+
+label {
+  display : block;
+  margin  : 0;
+}
+
+/*---------------------------------------------*/
+button {
+  background : transparent;
+  border     : none;
+  outline    : none !important;
+}
+
+button:hover {
+  cursor : pointer;
+}
+
+iframe {
+  border : none !important;
+}
+
+
+/*//////////////////////////////////////////////////////////////////
+[ Utility ]*/
+.txt1 {
+  color       : #E5E5E5;
+  font-family : "Poppins-Regular", sans-serif;
+  font-size   : 13px;
+  line-height : 1.5;
+}
+
+
+/*//////////////////////////////////////////////////////////////////
+[ login ]*/
+
+.limiter {
+  margin : 0 auto;
+  width  : 100%;
+}
+
+.container-login100 {
+  align-items         : center;
+  background-position : center;
+  background-repeat   : no-repeat;
+  background-size     : cover;
+  display             : -webkit-box;
+  display             : -webkit-flex;
+  display             : -moz-box;
+  display             : -ms-flexbox;
+  display             : flex;
+  flex-wrap           : wrap;
+  justify-content     : center;
+
+  min-height          : 100vh;
+  padding             : 15px;
+  position            : relative;
+  width               : 100%;
+  z-index             : 1;
+}
+
+.container-login100::before {
+  background-color : rgba(0, 0, 0, 0.65);
+  content          : "";
+  display          : block;
+  height           : 100%;
+  left             : 0;
+  position         : absolute;
+  top              : 0;
+  width            : 100%;
+  z-index          : -1;
+}
+
+.wrap-login100 {
+  background    : transparent;
+  border-radius : 10px;
+  overflow      : hidden;
+
+  width         : 390px;
+}
+
+
+/*------------------------------------------------------------------
+[ Form ]*/
+
+.login100-form {
+  background-color : #FFFFFF;
+  border-radius    : 10px;
+  width            : 100%;
+}
+
+.login100-form-logo {
+  align-items      : center;
+  background-color : #FFFFFF;
+
+  border-radius    : 50%;
+  color            : #333333;
+  display          : -webkit-box;
+  display          : -webkit-flex;
+  display          : -moz-box;
+  display          : -ms-flexbox;
+  display          : flex;
+  font-size        : 60px;
+  height           : 120px;
+  justify-content  : center;
+  margin           : 0 auto;
+  width            : 120px;
+}
+
+.login100-form-title {
+  color          : #FFFFFF;
+  display        : block;
+  font-family    : "Ubuntu-Bold", sans-serif;
+  font-size      : 28px;
+  line-height    : 1.2;
+  text-align     : center;
+
+  text-transform : uppercase;
+}
+
+
+/*------------------------------------------------------------------
+[ Input ]*/
+
+.wrap-input100 {
+  border-bottom : 1px solid #E6E6E6;
+  padding       : 29px 0;
+  position      : relative;
+  width         : 100%;
+}
+
+.input100 {
+  background         : transparent;
+  color              : #555555;
+  display            : block;
+  font-family        : "Ubuntu-Regular", sans-serif;
+
+  font-size          : 20px;
+  height             : 50px;
+  line-height        : 1.2;
+  padding            : 0 10px 0 80px;
+  -moz-transition    : all 0.4s;
+  -o-transition      : all 0.4s;
+  -webkit-transition : all 0.4s;
+  transition         : all 0.4s;
+  width              : 100%;
+}
+
+/*---------------------------------------------*/
+.focus-input100 {
+  display        : block;
+  height         : 100%;
+  left           : 0;
+  pointer-events : none;
+  position       : absolute;
+  top            : 0;
+  width          : 100%;
+}
+
+.focus-input100::before {
+  background         : #D41872;
+  background         : -webkit-linear-gradient(left, #A445B2, #D41872, #FA4299);
+  background         : -o-linear-gradient(left, #A445B2, #D41872, #FA4299);
+  background         : -moz-linear-gradient(left, #A445B2, #D41872, #FA4299);
+  background         : linear-gradient(left, #A445B2, #D41872, #FA4299);
+  bottom             : -1px;
+  content            : "";
+
+  display            : block;
+  height             : 1px;
+  left               : 0;
+  position           : absolute;
+
+  -moz-transition    : all 0.4s;
+  -o-transition      : all 0.4s;
+  -webkit-transition : all 0.4s;
+  transition         : all 0.4s;
+  width              : 0;
+}
+
+.focus-input100::after {
+  color              : #999999;
+  content            : attr(data-placeholder);
+  display            : block;
+
+  font-family        : "Linearicons-Free", sans-serif;
+  font-size          : 18px;
+  left               : 35px;
+  position           : absolute;
+  top                : 40px;
+  -moz-transition    : all 0.4s;
+
+
+  -o-transition      : all 0.4s;
+  -webkit-transition : all 0.4s;
+  transition         : all 0.4s;
+  width              : 100%;
+}
+
+.input100:focus {
+  padding-left : 60px;
+}
+
+.input100:focus + .focus-input100::after {
+  color : #D41872;
+  left  : 23px;
+}
+
+.input100:focus + .focus-input100::before {
+  width : 100%;
+}
+
+.has-val.input100 + .focus-input100::after {
+  color : #D41872;
+  left  : 23px;
+}
+
+.has-val.input100 + .focus-input100::before {
+  width : 100%;
+}
+
+.has-val.input100 {
+  padding-left : 60px;
+}
+
+
+/*------------------------------------------------------------------
+[ Button ]*/
+.container-login100-form-btn {
+  display         : -webkit-box;
+  display         : -webkit-flex;
+  display         : -moz-box;
+  display         : -ms-flexbox;
+  display         : flex;
+  flex-wrap       : wrap;
+  justify-content : center;
+  width           : 100%;
+}
+
+.login100-form-btn {
+  align-items        : center;
+  background         : #D41872;
+  background         : -webkit-linear-gradient(left, #A445B2, #D41872, #FA4299);
+  background         : -o-linear-gradient(left, #A445B2, #D41872, #FA4299);
+  background         : -moz-linear-gradient(left, #A445B2, #D41872, #FA4299);
+
+  background         : linear-gradient(left, #A445B2, #D41872, #FA4299);
+  border-radius      : 21px;
+  color              : #FFFFFF;
+  display            : -webkit-box;
+  display            : -webkit-flex;
+  display            : -moz-box;
+  display            : -ms-flexbox;
+  display            : flex;
+  font-family        : "Ubuntu-Bold", sans-serif;
+  font-size          : 18px;
+  height             : 42px;
+
+  justify-content    : center;
+  line-height        : 1.2;
+  min-width          : 160px;
+  padding            : 0 20px;
+  position           : relative;
+  text-transform     : uppercase;
+  -moz-transition    : all 0.4s;
+
+  -o-transition      : all 0.4s;
+  -webkit-transition : all 0.4s;
+  transition         : all 0.4s;
+  z-index            : 1;
+}
+
+.login100-form-btn::before {
+  background-color   : #555555;
+  border-radius      : 21px;
+  content            : "";
+  display            : block;
+  height             : 100%;
+  left               : 0;
+  opacity            : 0;
+  position           : absolute;
+  top                : 0;
+  -moz-transition    : all 0.4s;
+  -o-transition      : all 0.4s;
+
+  -webkit-transition : all 0.4s;
+  transition         : all 0.4s;
+  width              : 100%;
+  z-index            : -1;
+}
+
+.login100-form-btn:hover {
+  background-color : transparent;
+}
+
+.login100-form-btn:hover:before {
+  opacity : 1;
+}
+
+
+/*------------------------------------------------------------------
+[ Alert validate ]*/
+
+.validate-input {
+  position : relative;
+}
+
+.alert-validate::before {
+  background-color   : #FFFFFF;
+  border             : 1px solid #C80000;
+  border-radius      : 2px;
+  color              : #C80000;
+  content            : attr(data-validate);
+  font-family        : " Ubuntu-Bold", sans-serif;
+  font-size          : 13px;
+  line-height        : 1.4;
+  max-width          : 70%;
+  opacity            : 0;
+  padding            : 4px 25px 4px 10px;
+  pointer-events     : none;
+  position           : absolute;
+  right              : 10px;
+  text-align         : left;
+
+  top                : 50%;
+  -moz-transform     : translateY(-50%);
+  -ms-transform      : translateY(-50%);
+  -o-transform       : translateY(-50%);
+  -webkit-transform  : translateY(-50%);
+
+  transform          : translateY(-50%);
+  -moz-transition    : opacity 0.4s;
+
+  -o-transition      : opacity 0.4s;
+  -webkit-transition : opacity 0.4s;
+  transition         : opacity 0.4s;
+  visibility         : hidden;
+}
+
+.alert-validate::after {
+  color             : #C80000;
+  content           : "\f12a";
+  display           : block;
+  font-family       : "FontAwesome", sans-serif;
+
+  font-size         : 16px;
+  position          : absolute;
+  right             : 15px;
+  top               : 50%;
+  -moz-transform    : translateY(-50%);
+  -ms-transform     : translateY(-50%);
+  -o-transform      : translateY(-50%);
+  -webkit-transform : translateY(-50%);
+  transform         : translateY(-50%);
+}
+
+.alert-validate:hover:before {
+  opacity    : 1;
+  visibility : visible;
+}
+
+@media (max-width : 992px) {
+  .alert-validate::before {
+    opacity    : 1;
+    visibility : visible;
+  }
+}
+
+
+

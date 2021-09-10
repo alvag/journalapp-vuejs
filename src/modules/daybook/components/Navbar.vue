@@ -1,9 +1,9 @@
 <template>
     <nav class="navbar bg-primary">
         <a class="navbar-brand text-white">
-            <img class="d-inline-block align-text-top mx-2"
-                 height="24"
-                 src="@/assets/logo.png" alt="logo">
+            <img alt="logo"
+                 class="d-inline-block align-text-top mx-2"
+                 height="24" src="@/assets/logo.png">
             Daybook
         </a>
 
