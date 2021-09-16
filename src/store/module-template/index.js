@@ -1,11 +1,14 @@
-import moduleState from './state';
-import * as moduleActions from './actions';
-import * as moduleMutations from './mutations';
-import * as moduleGetters from './getters';
+import state from './state';
+import * as actions from './actions';
+import * as mutations from './mutations';
+import * as getters from './getters';
 
 const moduleStore = {
 	namespaced: true,
-	moduleState, moduleGetters, moduleActions, moduleMutations,
+	state,
+	getters,
+	actions,
+	mutations,
 };
 
 export default moduleStore;

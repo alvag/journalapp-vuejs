@@ -2,20 +2,21 @@
     <span class="login100-form-title p-b-41">
         Registro
     </span>
-    <form class="login100-form validate-form p-b-33 p-t-5">
+    <form class="login100-form validate-form p-b-33 p-t-5"
+          @submit.prevent="onSubmit">
 
         <div class="wrap-input100 validate-input" data-validate="Ingrese su nombre">
-            <input class="input100" placeholder="Nombre" required type="text">
+            <input v-model="userForm.name" class="input100" placeholder="Nombre" required type="text">
             <span class="focus-input100" data-placeholder="&#xe82a;"></span>
         </div>
 
         <div class="wrap-input100 validate-input" data-validate="Ingrese correo">
-            <input class="input100" placeholder="Correo" required type="text">
+            <input v-model="userForm.email" class="input100" placeholder="Correo" required type="text">
             <span class="focus-input100" data-placeholder="&#xe818;"></span>
         </div>
 
         <div class="wrap-input100 validate-input" data-validate="Ingrese contraseña">
-            <input class="input100" placeholder="Contraseña" required type="password">
+            <input v-model="userForm.password" class="input100" placeholder="Contraseña" required type="password">
             <span class="focus-input100" data-placeholder="&#xe80f;"></span>
         </div>
 
@@ -33,8 +34,29 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+import useAuth from '@/modules/auth/composables/useAuth';
+
 export default {
-    name: 'Login'
+    name: 'Login',
+    setup() {
+
+        const { createUser } = useAuth();
+
+        const userForm = ref( {
+            email: '',
+            name: '',
+            password: ''
+        } );
+
+        return {
+            userForm,
+            onSubmit: async () => {
+                const resp = await createUser( userForm.value );
+                console.log( resp );
+            }
+        };
+    }
 };
 </script>
 
