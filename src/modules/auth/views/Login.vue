@@ -2,15 +2,16 @@
     <span class="login100-form-title p-b-41">
         Ingresar
     </span>
-    <form class="login100-form validate-form p-b-33 p-t-5">
+    <form class="login100-form validate-form p-b-33 p-t-5"
+          @submit.prevent="onSubmit">
 
         <div class="wrap-input100 validate-input" data-validate="Enter username">
-            <input class="input100" placeholder="Correo" required type="text">
+            <input v-model="userForm.email" class="input100" placeholder="Correo" required type="text">
             <span class="focus-input100" data-placeholder="&#xe82a;"></span>
         </div>
 
         <div class="wrap-input100 validate-input" data-validate="Enter password">
-            <input class="input100" placeholder="Contraseña" required type="password">
+            <input v-model="userForm.password" class="input100" placeholder="Contraseña" required type="password">
             <span class="focus-input100" data-placeholder="&#xe80f;"></span>
         </div>
 
@@ -28,8 +29,36 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+import useAuth from '@/modules/auth/composables/useAuth';
+import { useRouter } from 'vue-router';
+import Swal from 'sweetalert2';
+
 export default {
-    name: 'Login'
+    name: 'Login',
+
+    setup() {
+        const { loginUser } = useAuth();
+        const router = useRouter();
+
+        const userForm = ref( {
+            email: 'test2@gmail.com',
+            password: '123456'
+        } );
+
+        return {
+            userForm,
+            onSubmit: async () => {
+                const { ok, message } = await loginUser( userForm.value );
+
+                if ( ok ) {
+                    router.push( { name: 'no-entry' } );
+                } else {
+                    Swal.fire( 'Error', message, 'error' );
+                }
+            }
+        };
+    }
 };
 </script>
 

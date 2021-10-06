@@ -1,1 +1,1 @@
-// export const actions = async ({commit}) => {}
+// export const action = async ({commit}) => {}
